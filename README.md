@@ -1,50 +1,70 @@
-# star-schema
-Criando um Star Schema para Cenários de Vendas com Power BI
+# **Star Schema para Análise de Professores no Power BI**
 
+## 📌 **Visão Geral**
+O **Star Schema** foi projetado para fornecer uma análise eficiente dos dados relacionados aos professores, incluindo disciplinas, cursos e departamentos. Esse modelo facilita consultas rápidas e otimizadas no **Power BI**, garantindo uma estrutura bem organizada e de fácil compreensão.
 
-# Tabelas de Fato:
-Fact_Professor:
+---
+## 🌟 **Estrutura do Modelo**
+O esquema é composto por:
+- **Uma tabela de fato** que centraliza os eventos e métricas associadas aos professores.
+- **Cinco tabelas de dimensão** que armazenam detalhes sobre professores, disciplinas, cursos, departamentos e datas.
 
-ProfessorID (PK, FK): Identificador único do professor.
-DisciplineID (FK): Identificador único da disciplina ministrada pelo professor.
-CourseID (FK): Identificador único do curso ministrado pelo professor.
-DepartmentID (FK): Identificador único do departamento ao qual o professor está associado.
-DataID (FK): Identificador único da data associada aos eventos do professor.
-Measure: Valor analisado (medida específica relacionada ao professor).
-Tabelas de Dimensão:
-Dim_Professors:
+### 🔹 **Tabelas de Fato**
+#### **Fact_Professor** (Eventos e Métricas)
+| Campo | Tipo | Descrição |
+|-----------------|-----------|-------------|
+| **ProfessorID** (PK, FK) | INT | Identificador único do professor. |
+| **DisciplineID** (FK) | INT | Identificador único da disciplina ministrada. |
+| **CourseID** (FK) | INT | Identificador único do curso ministrado. |
+| **DepartmentID** (FK) | INT | Identificador único do departamento do professor. |
+| **DateID** (FK) | INT | Identificador único da data associada ao evento. |
+| **Measure** | DECIMAL | Métrica analisada (exemplo: carga horária total, número de alunos atendidos). |
 
-ProfessorID (PK): Identificador único do professor.
-ProfessorName: Nome completo do professor.
-ProfessorBirthDate: Data de nascimento do professor.
-ProfessorGender: Gênero do professor.
-Dim_Disciplines:
+---
+### 🔹 **Tabelas de Dimensão**
 
-DisciplineID (PK): Identificador único da disciplina.
-DisciplineName: Nome da disciplina.
-DisciplineCredits: Créditos associados à disciplina.
-Dim_Courses:
+#### **Dim_Professors** (Professores)
+| Campo | Tipo | Descrição |
+|------------------|-----------|-------------|
+| **ProfessorID** (PK) | INT | Identificador único do professor. |
+| **ProfessorName** | VARCHAR | Nome completo do professor. |
+| **ProfessorBirthDate** | DATE | Data de nascimento. |
+| **ProfessorGender** | VARCHAR | Gênero do professor. |
 
-CourseID (PK): Identificador único do curso.
-CourseName: Nome do curso.
-CourseCredits: Créditos associados ao curso.
-Dim_Departments:
+#### **Dim_Disciplines** (Disciplinas)
+| Campo | Tipo | Descrição |
+|-----------------|-----------|-------------|
+| **DisciplineID** (PK) | INT | Identificador único da disciplina. |
+| **DisciplineName** | VARCHAR | Nome da disciplina. |
+| **DisciplineCredits** | INT | Quantidade de créditos da disciplina. |
 
-DepartmentID (PK): Identificador único do departamento.
-DepartmentName: Nome do departamento.
-Dim_Dates:
+#### **Dim_Courses** (Cursos)
+| Campo | Tipo | Descrição |
+|-------------|-----------|-------------|
+| **CourseID** (PK) | INT | Identificador único do curso. |
+| **CourseName** | VARCHAR | Nome do curso. |
+| **CourseCredits** | INT | Quantidade de créditos do curso. |
 
-DataID (PK): Identificador único da data.
-Date: Data no formato 'yyyy-mm-dd'.
-Year: Ano da data.
-Month: Mês da data.
-Day: Dia da data.
+#### **Dim_Departments** (Departamentos)
+| Campo | Tipo | Descrição |
+|---------------|-----------|-------------|
+| **DepartmentID** (PK) | INT | Identificador único do departamento. |
+| **DepartmentName** | VARCHAR | Nome do departamento. |
 
-# Notas Adicionais:
-O esquema em estrela foi projetado com foco na análise dos dados dos professores.
-As tabelas de dimensão contêm detalhes relevantes sobre professores, disciplinas, cursos, departamentos e datas.
-A tabela de fato (Fact_Professor) vincula as chaves estrangeiras às chaves primárias das tabelas de dimensão.
-Foi adicionada uma tabela de dimensão de datas para suportar análises temporais, mesmo que a granularidade não seja fixada.
-Os relacionamentos entre as tabelas devem ser estabelecidos conforme as chaves primárias e estrangeiras indicadas.
-Observação sobre Datas:
-Para compensar a falta de dados de datas no modelo relacional original, foram adicionadas datas associadas a eventos específicos, como a oferta de disciplinas e cursos. A granularidade das datas pode ser ajustada conforme a necessidade da análise.
+#### **Dim_Dates** (Datas)
+| Campo | Tipo | Descrição |
+|-----------|-----------|-------------|
+| **DateID** (PK) | INT | Identificador único da data. |
+| **Date** | DATE | Data no formato 'YYYY-MM-DD'. |
+| **Year** | INT | Ano correspondente. |
+| **Month** | INT | Mês correspondente. |
+| **Day** | INT | Dia correspondente. |
+
+---
+## 🚀 **Destaques e Benefícios**
+✅ **Modelo otimizado para consultas rápidas no Power BI** 📊
+✅ **Análises temporais detalhadas com a tabela de datas** ⏳
+✅ **Relacionamentos bem definidos entre tabelas para insights estratégicos** 🔗
+
+Com esse modelo, você poderá criar **dashboards interativos e análises profundas** sobre distribuição de disciplinas, carga horária dos professores, relação entre cursos e departamentos, e muito mais! 🎯📈
+
