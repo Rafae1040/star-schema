@@ -61,10 +61,25 @@ O esquema é composto por:
 | **Day** | INT | Dia correspondente. |
 
 ---
+## 🔗 **Relacionamentos do Modelo**
+Os relacionamentos entre as tabelas são estruturados conforme abaixo:
+
+| **Tabela de Fato** | **Tabela de Dimensão** | **Chave de Relacionamento** |
+|-------------------|--------------------|----------------------|
+| **Fact_Professor** | **Dim_Professors** | ProfessorID |
+| **Fact_Professor** | **Dim_Disciplines** | DisciplineID |
+| **Fact_Professor** | **Dim_Courses** | CourseID |
+| **Fact_Professor** | **Dim_Departments** | DepartmentID |
+| **Fact_Professor** | **Dim_Dates** | DateID |
+
+Esses relacionamentos garantem uma estrutura eficiente para análise de dados, permitindo a exploração detalhada das métricas associadas aos professores.
+
+---
 ## 🚀 **Destaques e Benefícios**
 ✅ **Modelo otimizado para consultas rápidas no Power BI** 📊
 ✅ **Análises temporais detalhadas com a tabela de datas** ⏳
 ✅ **Relacionamentos bem definidos entre tabelas para insights estratégicos** 🔗
 
 Com esse modelo, você poderá criar **dashboards interativos e análises profundas** sobre distribuição de disciplinas, carga horária dos professores, relação entre cursos e departamentos, e muito mais! 🎯📈
+
 
