@@ -1,4 +1,4 @@
-# **Star Schema para Análise de Professores no Power BI**
+# **Projeto Star Schema para Análise de base de dados Professores no Power BI**
 
 ## 📌 **Visão Geral**
 O **Star Schema** foi projetado para fornecer uma análise eficiente dos dados relacionados aos professores, incluindo disciplinas, cursos e departamentos. Esse modelo facilita consultas rápidas e otimizadas no **Power BI**, garantindo uma estrutura bem organizada e de fácil compreensão.
